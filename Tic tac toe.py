@@ -1,52 +1,13 @@
-from random import randrange
-
 
 #дано поле 3Х3, с системой от 0 до 2, оси Х и У
 
-
-# какие нам нужны функции
-# - отрисовки текущего состояния доски
-# - приём пользовательского ввода (должна определять X ты или Y)
-# - проверка выигрышная ли комбинация
-# - проверка ввода координат
-# - проверка "незанятости" клетки
-
-# как выглядит цикл
-# начинаем с Х
-# - отрисовка
-# - ввода
-# - проверка корректности
-# - проверка незанятости
-# - проверка выигрыша или ничьей
-# если Х, то О и наоборот
-
+from random import randrange
 #     0    1    2
 board = [
     [".", ".", "."], # 0
     [".", ".", "."], # 1
     [".", ".", "."], # 2
 ]
-
-# диагональ
-if (board[0][0] == "X" and board[1][1] == "X" and board[2][2]) or (board[0][2] == "X" and board[1][1] == "X" and board[2][0]):
-    pass
-
-
-# to send via telegram
-#```python
-#
-#```
-
-
-# горизонталь
-if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[1][0] == "X" and board[1][1] == "X" and board[1][2]) or (board[2][0] == "X" and board[2][1] == "X and board[2][2]"):
-    pass
-
-
-# вертикаль
-if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[0][1] == "X" and board[1][1] == "X" and board[1][2]) or (board[0][2] == "X" and board[1][2] == "X" and board[2][2]):
-    pass
-
 
 def draw_board():
     for row in board:
@@ -58,7 +19,9 @@ def draw_board():
 
 draw_board()
 
-
+x2 = randrange(0,2)
+y2 = randrange(0,2)
+x2 = 3
 
 def get_input(player):
     #пример от Сергея Ежова
@@ -73,12 +36,7 @@ def get_input(player):
 
 x, y = get_input("O")
 
-
-# x2 = randrange(0,2)
-# y2 = randrange(0,2)
-# x2 = 3
-
-
+# ??? как поставить loop функцию на выбор координатов
 
 # проверка
 if (x1<0 or x1>2) or (y1<0 or y1>2):
@@ -92,6 +50,36 @@ if board[x1][y1] != ".":
     print("Введите заново")
     # код на повтор ввода
 
-#проверить выйгрыш если 0,0,0 или Х,Х,Х
+# диагональ
+if (board[0][0] == "X" and board[1][1] == "X" and board[2][2]) or (board[0][2] == "X" and board[1][1] == "X" and board[2][0]):
+    pass
+    print(f"{x_or_o} wins!")
+    exit
 
-print("Победитель: ") ??{User1} or {User2}
+# горизонталь
+if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[1][0] == "X" and board[1][1] == "X" and board[1][2]) or (board[2][0] == "X" and board[2][1] == "X and board[2][2]"):
+    pass
+    print(f"{x_or_o} wins!")
+    exit
+
+# вертикаль
+if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[0][1] == "X" and board[1][1] == "X" and board[1][2]) or (board[0][2] == "X" and board[1][2] == "X" and board[2][2]):
+    pass
+    print(f"{x_or_o} wins!")
+    exit
+
+
+# ??? я не вижу у себя, что я залинковала логику что один пользователь ставит 0, а другой Х
+
+
+
+
+
+
+
+
+
+
+
+
+
