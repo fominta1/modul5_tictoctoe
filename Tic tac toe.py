@@ -31,7 +31,7 @@ def get_input(player):
         print("введите заново")
         # код на повтор - вызов функции ввода
     x1,y1 = int(x1),int(y1)
-    print(f"Вы ввели x = {x1} и y = {y1}")
+    # print(f"Вы ввели x = {x1} и y = {y1}")
     return x1, y1
 
 x, y = get_input("O")
@@ -39,47 +39,39 @@ x, y = get_input("O")
 # ??? как поставить loop функцию на выбор координатов
 
 # проверка
-if (x1<0 or x1>2) or (y1<0 or y1>2):
-    print("выберите координаты от 0 до 2")
 
-x2 = randrange(0,2)
-y2 = randrange(0,2)
+def check_winning(x1, y1, x_or_o):
+
+    if (x1<0 or x1>2) or (y1<0 or y1>2):
+        print("выберите координаты от 0 до 2")
+
+    x2 = randrange(0,2)
+    y2 = randrange(0,2)
 
 
-if board[x1][y1] != ".":
-    print("Введите заново")
-    # код на повтор ввода
+    if board[x1][y1] != ".":
+        print("Введите заново")
+        # код на повтор ввода
 
-# диагональ
-if (board[0][0] == "X" and board[1][1] == "X" and board[2][2]) or (board[0][2] == "X" and board[1][1] == "X" and board[2][0]):
-    pass
-    print(f"{x_or_o} wins!")
-    exit
+    # диагональ
+    if (board[0][0] == "X" and board[1][1] == "X" and board[2][2]) or (board[0][2] == "X" and board[1][1] == "X" and board[2][0]):
+        pass
+        print(f"{x_or_o} wins!")
+        exit
 
-# горизонталь
-if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[1][0] == "X" and board[1][1] == "X" and board[1][2]) or (board[2][0] == "X" and board[2][1] == "X and board[2][2]"):
-    pass
-    print(f"{x_or_o} wins!")
-    exit
+    # горизонталь
+    if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[1][0] == "X" and board[1][1] == "X" and board[1][2]) or (board[2][0] == "X" and board[2][1] == "X and board[2][2]"):
+        pass
+        print(f"{x_or_o} wins!")
+        exit
 
-# вертикаль
-if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[0][1] == "X" and board[1][1] == "X" and board[1][2]) or (board[0][2] == "X" and board[1][2] == "X" and board[2][2]):
-    pass
-    print(f"{x_or_o} wins!")
-    exit
+    # вертикаль
+    if (board[0][0] == "X" and board[1][0] == "X" and board[2][0]) or (board[0][1] == "X" and board[1][1] == "X" and board[1][2]) or (board[0][2] == "X" and board[1][2] == "X" and board[2][2]):
+        pass
+        print(f"{x_or_o} wins!")
+        exit
 
 
 # ??? я не вижу у себя, что я залинковала логику что один пользователь ставит 0, а другой Х
-
-
-
-
-
-
-
-
-
-
-
 
 
