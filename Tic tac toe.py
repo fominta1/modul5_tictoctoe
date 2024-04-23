@@ -17,7 +17,6 @@ def draw_board():
             print(f"| {col} ", end=" ")
 
 
-draw_board()
 
 x2 = randrange(0,2)
 y2 = randrange(0,2)
@@ -34,7 +33,6 @@ def get_input(player):
     # print(f"Вы ввели x = {x1} и y = {y1}")
     return x1, y1
 
-x, y = get_input("O")
 
 # ??? как поставить loop функцию на выбор координатов
 
@@ -74,4 +72,15 @@ def check_winning(x1, y1, x_or_o):
 
 # ??? я не вижу у себя, что я залинковала логику что один пользователь ставит 0, а другой Х
 
+x_or_y = "X"
+while True:
+    draw_board()
+    x, y = get_input(x_or_y)
+    if board[x][y] == ".":
+        board[x][y] = x_or_y
+    else:
+        print("this position is already occupied, try again")
+        continue
+    check_winning(x, y, x_or_y)
+    x_or_y = "O" if x_or_y == "X" else "X"
 
